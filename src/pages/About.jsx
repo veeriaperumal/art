@@ -37,14 +37,14 @@ export default function About() {
   return (
     <PageWrapper>
       <SEO 
-        title="About Our Fashion Academy | Expert Trainers in Chidambaram" 
-        description="Learn the history and mission of Glorious Art Academy. Providing master-level Aari embroidery and fashion tailoring for over 5 years."
+        title="Meet the Masters | Glorious Art Academy Success Story" 
+        description="Learn the history and mission of Glorious Art Academy. Discover how we empower women in Chidambaram through expert fashion and beauty training."
         url="/about"
         schema={aboutSchema}
       />
 
       {/* ── Header ────────────────────────────────────────── */}
-      <section className="pt-32 pb-16 lg:pt-48 lg:pb-32 px-5 sm:px-8 bg-slate-50 relative overflow-hidden">
+      <section className="pt-48 pb-16 lg:pt-64 lg:pb-32 px-5 sm:px-8 bg-slate-50 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-rose-100/40 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4" />
         <div className="container-custom relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -148,12 +148,16 @@ export default function About() {
       {/* ── Final Call ────────────────────────────────────── */}
       <section className="py-24 px-5 sm:px-8">
         <div className="container-custom">
-           <div className="bg-slate-900 rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden shadow-2xl">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-rose-600/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+           <div className="bg-slate-900 rounded-[4rem] p-12 md:p-24 text-center relative overflow-hidden shadow-2xl group">
+              <div className="absolute inset-0 bg-linear-to-tr from-rose-900/40 to-purple-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               <div className="relative z-10">
-                 <h2 className="font-serif text-3xl sm:text-6xl font-bold text-white mb-10 leading-tight">Be Our Next <span className="text-rose-400">Success Story</span></h2>
+                 <div className="mb-6">
+                    <span className="text-rose-400 font-extrabold uppercase tracking-widest text-xs">Summer Special Live</span>
+                 </div>
+                 <h2 className="font-serif text-3xl sm:text-6xl font-bold text-white mb-8 leading-tight">Be Our Next <span className="gradient-text italic font-normal">Success Story</span></h2>
+                 <p className="text-slate-400 mb-10 max-w-2xl mx-auto font-medium">Join Chidambaram's #1 academy today and get an exclusive <span className="text-white font-bold underline decoration-rose-500 underline-offset-8">30 Days FREE Advanced Mastery training.</span></p>
                   <Link to="/contact" className="btn-premium btn-gradient w-full sm:w-auto px-16 text-center">
-                    Enroll Today <ArrowRight size={22} />
+                    Enroll with Free Offer <ArrowRight size={22} />
                   </Link>
               </div>
            </div>

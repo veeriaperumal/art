@@ -17,7 +17,7 @@ export default function Contact() {
       />
       
       {/* ── Title Banner ─────────────────────────────────── */}
-      <section className="pt-32 pb-16 lg:pt-48 lg:pb-32 px-5 sm:px-8 bg-slate-50 relative overflow-hidden">
+      <section className="pt-48 pb-16 lg:pt-64 lg:pb-32 px-5 sm:px-8 bg-slate-50 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-rose-100/40 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4" />
         <div className="container-custom relative z-10 text-center lg:text-left">
           <motion.span 
@@ -54,10 +54,10 @@ export default function Contact() {
 
                  <div className="space-y-8">
                     {[
-                      { icon: <MapPin />, title: 'Our Campus', text: 'West Car Street, Chidambaram, Tamil Nadu, 608001' },
-                      { icon: <Phone />, title: 'Direct Line', text: '+91 80727 69642' },
-                      { icon: <Mail />, title: 'Email Support', text: 'gloriousart.creations@gmail.com' },
-                      { icon: <Clock />, title: 'Business Hours', text: 'Mon-Sat: 9:00 AM - 6:00 PM' }
+                       { icon: <MapPin />, title: 'Our Campus', text: '8A/2, Umayal Street, (Near National Shopping), Chidambaram, Tamil Nadu, 608001' },
+                       { icon: <Phone />, title: 'Direct Line', text: '+91 80727 69642, 73395 33550' },
+                       { icon: <Mail />, title: 'Email Support', text: 'gloriousart.creations@gmail.com' },
+                       { icon: <Clock />, title: 'Batch Timings', text: 'Daily & Weekend Batches Available' }
                     ].map((item, i) => (
                        <motion.div 
                          key={i}

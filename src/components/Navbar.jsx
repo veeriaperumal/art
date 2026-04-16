@@ -39,22 +39,43 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-4 sm:px-8 ${
-          scrolled ? 'pt-4' : 'pt-6'
-        }`}
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
       >
-        <div className={`mx-auto max-w-7xl px-6 rounded-[2.5rem] transition-all duration-500 glass-effect shadow-premium ${
-           scrolled ? 'py-2' : 'py-3'
-        }`}>
+        {/* ── Urgency Ribbon (Black - Top) ── */}
+        <div className="bg-slate-900 text-white py-1.5 overflow-hidden whitespace-nowrap border-b border-white/5">
+          <div className="flex animate-marquee-reverse gap-12 items-center">
+            {[1,2,3,4,5,6].map(i => (
+              <span key={i} className="text-[10px] font-extrabold uppercase tracking-[.2em] flex items-center gap-2">
+                <Sparkles size={12} className="text-rose-500" /> Next Batch Starts: June 1st, 2026 — Limited Seats Available! — Enroll Now
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* ── Summer Special Urgency Banner (Rose-Violet) ────── */}
+        <div className="bg-linear-to-r from-rose-600 to-purple-700 text-white py-1.5 overflow-hidden whitespace-nowrap border-b border-white/10">
+          <div className="flex animate-marquee gap-8 items-center">
+            {[1,2,3,4,5,6].map(i => (
+              <span key={i} className="text-[10px] md:text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+                🌞 Summer Special: Join any Professional Course and get 30 Days FREE! <Sparkles size={12} className="text-yellow-300" /> 
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* ── Main Navigation ── */}
+        <div className={`transition-all duration-500 px-4 sm:px-8 ${scrolled ? 'pt-2' : 'pt-4'}`}>
+          <div className={`mx-auto max-w-7xl px-6 rounded-[2.5rem] transition-all duration-500 glass-effect shadow-premium ${scrolled ? 'py-2' : 'py-3'
+            }`}>
           <div className="flex items-center justify-between h-14 md:h-16">
-            
+
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 shrink-0 group">
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-white flex items-center justify-center p-1.5 shadow-sm group-hover:rotate-6 transition-transform duration-300">
-                <img src={logo} alt="Glorious Art Academy" className="w-full h-full object-contain" />
+              <div className="w-10 h-10 md:w-14 md:h-14 rounded-2xl bg-white flex items-center justify-center p-1 shadow-sm group-hover:rotate-3 transition-transform duration-300">
+                <img src="/logo.png" alt="Glorious Art Academy" className="w-full h-full object-contain" />
               </div>
               <div className="hidden sm:block">
-                <p className="font-serif text-lg font-extrabold leading-none text-slate-900 group-hover:text-rose-600 transition-colors">Glorious Art</p>
+                <p className="font-serif text-lg md:text-xl font-extrabold leading-none text-slate-900 group-hover:text-rose-600 transition-colors">Glorious Art</p>
                 <p className="text-[10px] text-rose-500 tracking-[0.2em] font-extrabold uppercase mt-1">Academy</p>
               </div>
             </Link>
@@ -67,9 +88,8 @@ export default function Navbar() {
                   to={link.to}
                   end={link.to === '/'}
                   className={({ isActive }) =>
-                    `px-5 py-2.5 text-xs font-bold font-sans uppercase tracking-[0.05em] rounded-[1.25rem] transition-all duration-300 ${
-                      isActive 
-                      ? 'bg-white text-rose-600 shadow-sm' 
+                    `px-5 py-2.5 text-xs font-bold font-sans uppercase tracking-[0.05em] rounded-[1.25rem] transition-all duration-300 ${isActive
+                      ? 'bg-white text-rose-600 shadow-sm'
                       : 'text-slate-500 hover:text-rose-600'
                     }`
                   }
@@ -96,20 +116,21 @@ export default function Navbar() {
               aria-label="Toggle menu"
             >
               <AnimatePresence mode="wait">
-                {open 
-                  ? <motion.div key="x" initial={{rotate:-90, opacity:0}} animate={{rotate:0, opacity:1}} exit={{rotate:90, opacity:0}}><X size={22} /></motion.div>
-                  : <motion.div key="menu" initial={{rotate:90, opacity:0}} animate={{rotate:0, opacity:1}} exit={{rotate:-90, opacity:0}}><Menu size={22} /></motion.div>
+                {open
+                  ? <motion.div key="x" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }}><X size={22} /></motion.div>
+                  : <motion.div key="menu" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }}><Menu size={22} /></motion.div>
                 }
               </AnimatePresence>
             </button>
           </div>
         </div>
-      </header>
+      </div>
+    </header>
 
       {/* Mobile Menu Overlay & Drawer */}
       <AnimatePresence>
         {open && (
-           <>
+          <>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -126,15 +147,15 @@ export default function Navbar() {
             >
               <div className="flex flex-col h-full gap-10">
                 <div className="flex items-center justify-between">
-                   <Link to="/" className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-2xl bg-slate-50 flex items-center justify-center p-1.5 shadow-sm">
-                        <img src={logo} alt="Logo" className="w-full h-full object-contain" />
-                      </div>
-                      <p className="font-serif text-lg font-extrabold text-slate-900">Glorious Art</p>
-                   </Link>
-                   <button onClick={() => setOpen(false)} className="w-10 h-10 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400">
-                      <X size={20} />
-                   </button>
+                  <Link to="/" className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center p-1 shadow-sm">
+                      <img src="/glorious_art_logo_1776359795125.png" alt="Logo" className="w-full h-full object-contain" />
+                    </div>
+                    <p className="font-serif text-xl font-extrabold text-slate-900">Glorious Art</p>
+                  </Link>
+                  <button onClick={() => setOpen(false)} className="w-10 h-10 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400">
+                    <X size={20} />
+                  </button>
                 </div>
 
                 <div className="flex flex-col gap-3">
@@ -150,10 +171,9 @@ export default function Navbar() {
                         to={link.to}
                         end={link.to === '/'}
                         className={({ isActive }) =>
-                          `flex items-center justify-between px-6 py-4 rounded-2xl text-lg font-bold transition-all ${
-                            isActive
-                              ? 'bg-rose-600 text-white shadow-lg shadow-rose-200'
-                              : 'text-slate-600 hover:bg-rose-50 hover:text-rose-600'
+                          `flex items-center justify-between px-6 py-4 rounded-2xl text-lg font-bold transition-all ${isActive
+                            ? 'bg-rose-600 text-white shadow-lg shadow-rose-200'
+                            : 'text-slate-600 hover:bg-rose-50 hover:text-rose-600'
                           }`
                         }
                       >
@@ -177,7 +197,7 @@ export default function Navbar() {
                 </div>
               </div>
             </motion.div>
-           </>
+          </>
         )}
       </AnimatePresence>
     </>

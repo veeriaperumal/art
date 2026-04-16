@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import { 
   Sparkles, Award, Users, BookOpen, Clock, 
-  ChevronRight, ArrowRight, CheckCircle2, Star, Plus, Play, Quote, Phone 
+  ChevronRight, ArrowRight, CheckCircle2, Star, Plus, Play, Quote, Phone, ShieldCheck 
 } from 'lucide-react'
 import PageWrapper from '../components/PageWrapper'
 import SEO from '../components/SEO'
@@ -110,35 +110,24 @@ export default function Home() {
         schema={homeSchema}
       />
 
-      {/* ── Urgency Ribbon ────────────────────────────────── */}
-      <div className="bg-slate-900 text-white py-2 overflow-hidden whitespace-nowrap">
-        <div className="flex animate-marquee gap-12 items-center">
-          {[1,2,3,4].map(i => (
-            <span key={i} className="text-[10px] font-extrabold uppercase tracking-[0.2em] flex items-center gap-2">
-              <Sparkles size={12} className="text-rose-500" /> Next Batch Starts: June 1st, 2026 — Limited Seats Available!
-            </span>
-          ))}
-        </div>
-      </div>
-
       {/* ── Hero Section ──────────────────────────────────── */}
-      <section className="relative min-h-[95vh] flex items-center pt-24 pb-20 lg:pt-32 lg:pb-32 overflow-hidden bg-white">
-        <div className="absolute top-0 right-[-10%] w-[60vw] h-[60vw] bg-rose-50 rounded-full blur-[120px] opacity-60" />
-        <div className="absolute bottom-[-20%] left-[-10%] w-[50vw] h-[50vw] bg-purple-50 rounded-full blur-[100px] opacity-40" />
+      <section className="relative min-h-[90vh] lg:min-h-[100vh] flex items-center pt-32 sm:pt-40 lg:pt-48 pb-20 lg:pb-32 overflow-hidden bg-white">
+        <div className="absolute top-0 right-[-10%] w-[80vw] lg:w-[60vw] h-[80vw] lg:h-[60vw] bg-rose-50 rounded-full blur-[120px] opacity-60" />
+        <div className="absolute bottom-[-20%] left-[-10%] w-[60vw] lg:w-[50vw] h-[60vw] lg:h-[50vw] bg-purple-50 rounded-full blur-[100px] opacity-40" />
         
-        <div className="container-custom relative z-10">
-          <div className="grid lg:grid-cols-12 gap-16 xl:gap-24 items-center">
+        <div className="container-custom relative z-10 px-4 sm:px-8">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 xl:gap-24 items-center">
             
-            <div className="lg:col-span-7 xl:col-span-6 text-center lg:text-left space-y-10">
+            <div className="lg:col-span-7 xl:col-span-6 text-center lg:text-left space-y-8 lg:space-y-10 order-2 lg:order-1">
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full glass-effect border-rose-100/50 shadow-sm"
+                className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full glass-effect border-rose-100/50 shadow-sm mx-auto lg:mx-0"
               >
                 <div className="flex -space-x-2">
                   {[1,2,3,4].map(i => <div key={i} className="w-6 h-6 rounded-full border-2 border-white bg-slate-200" />)}
                 </div>
-                <span className="text-[10px] sm:text-xs font-extrabold uppercase tracking-widest text-slate-700">Join 500+ successful Women in Chidambaram</span>
+                <span className="text-[10px] xs:text-xs font-extrabold uppercase tracking-widest text-slate-700">Join 500+ successful Women in Chidambaram</span>
               </motion.div>
 
               <div className="space-y-8">
@@ -149,7 +138,7 @@ export default function Home() {
                   className="heading-special text-slate-900 font-bold"
                 >
                   Master <span className="gradient-text italic font-normal">Fashion Arts</span> <br />
-                  in Chidambaram
+                  & Vocational Diplomas
                 </motion.h1>
 
                 <motion.p 
@@ -226,6 +215,64 @@ export default function Home() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Academy Advantages (Brochure Details) ────────────── */}
+      <section className="py-24 px-5 sm:px-8 bg-slate-900 overflow-hidden relative group">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-rose-900/20 via-slate-900 to-slate-900 opacity-50" />
+        <div className="container-custom relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-12">
+               <div>
+                  <span className="text-rose-400 font-extrabold uppercase tracking-[0.4em] text-[10px] sm:text-xs block mb-4">Official Accreditation</span>
+                  <h2 className="font-serif text-3xl sm:text-6xl font-bold text-white leading-tight">
+                    Chidambaram's Trusted <br /> 
+                    <span className="italic font-normal text-rose-300 underline decoration-rose-500/30 underline-offset-[12px]">ICVE Affiliate</span>
+                  </h2>
+               </div>
+               
+               <div className="grid sm:grid-cols-2 gap-8">
+                  {[
+                    { title: '100% Job Guarantee', desc: 'A complete skill training institute with guaranteed placement assistance.' },
+                    { title: 'Daily & Weekend Batches', desc: 'Flexible timings designed for students, homemakers, and professionals.' },
+                    { title: 'Certified Trainers', desc: 'Learn from experienced female master-artisans with professional degrees.' },
+                    { title: 'Entrepreneur Support', desc: 'Expert consultation to start your own boutique or beauty studio.' }
+                  ].map((item, i) => (
+                    <div key={i} className="space-y-4">
+                      <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-rose-400">
+                        <ShieldCheck size={20} />
+                      </div>
+                      <h4 className="text-white font-bold text-lg">{item.title}</h4>
+                      <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+                    </div>
+                  ))}
+               </div>
+            </div>
+
+            <div className="relative">
+               <motion.div 
+                 initial={{ opacity: 0, scale: 0.9 }}
+                 whileInView={{ opacity: 1, scale: 1 }}
+                 className="aspect-square rounded-[4rem] bg-white flex flex-col items-center justify-center p-8 lg:p-16 text-center border-4 border-rose-500 shadow-[0_0_50px_rgba(225,29,72,0.3)] relative group overflow-hidden"
+               >
+                  <div className="absolute inset-0 bg-linear-to-br from-rose-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  <div className="relative z-10 space-y-8">
+                    <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-3xl bg-slate-50 flex items-center justify-center p-4 border border-slate-100 mx-auto group-hover:rotate-6 transition-transform">
+                       <Award size={64} className="text-rose-500" strokeWidth={1.5} />
+                    </div>
+                    <div className="space-y-4">
+                      <div className="text-slate-900 font-extrabold text-xs tracking-[.4em] uppercase">National Recognition</div>
+                      <h3 className="text-slate-900 font-serif text-2xl sm:text-3xl font-bold leading-tight">Indian Council for <br /> Vocational Education</h3>
+                    </div>
+                    <div className="py-4 px-6 bg-rose-600 rounded-2xl text-white font-extrabold text-sm uppercase tracking-widest inline-block shadow-lg shadow-rose-200">
+                       100% Govt Recognized
+                    </div>
+                    <p className="text-slate-400 text-xs max-w-xs mx-auto font-medium">Providing globally valid certificates for all fashion & beauty programs since 2018.</p>
+                  </div>
+               </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -310,17 +357,26 @@ export default function Home() {
       {/* ── Final Conversion CTA ──────────────────────────── */}
       <section className="py-24 px-4 bg-white">
         <div className="container-custom">
-          <div className="relative rounded-[5rem] overflow-hidden bg-slate-900 p-12 sm:p-24 text-center">
+          <div className="relative rounded-[5rem] overflow-hidden bg-slate-900 p-12 sm:p-24 text-center group">
+            <div className="absolute inset-0 bg-linear-to-tr from-rose-900/60 to-purple-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             <div className="relative z-10 space-y-12">
-               <h2 className="heading-special text-white font-bold">
-                 Secure Your Spot for the <br />
-                 <span className="text-rose-400">June Batch</span>
-               </h2>
+               <div className="space-y-4">
+                  <span className="text-rose-400 font-extrabold uppercase tracking-[.4em] text-[10px] sm:text-xs">Limited Time Offer</span>
+                  <h2 className="heading-special text-white font-bold">
+                    Secure Your Spot for the <br />
+                    <span className="gradient-text italic font-normal">June Batch</span>
+                  </h2>
+               </div>
+               
+               <p className="text-slate-400 font-medium text-lg max-w-2xl mx-auto">
+                 Join any Professional course today and get <span className="text-white font-bold underline decoration-rose-500 underline-offset-8">30 Days of Advanced Training for FREE!</span> This summer special expires soon.
+               </p>
+
                <div className="flex flex-col md:flex-row items-center justify-center gap-8">
                   <Link to="/contact" className="btn-premium btn-gradient w-full sm:w-auto px-16 text-lg py-5 shadow-rose-900/40 text-center">
-                    Enroll Now <ArrowRight size={22} />
+                    Enroll with Free Offer <ArrowRight size={22} />
                   </Link>
-                  <a href="tel:+918072769642" className="text-white font-bold flex items-center gap-3">
+                  <a href="tel:+918072769642" className="text-white font-bold flex items-center gap-3 hover:text-rose-400 transition-colors">
                     <Phone size={24} className="text-rose-500" /> +91 80727 69642
                   </a>
                </div>

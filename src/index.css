@@ -4,7 +4,7 @@
 
 @theme {
   --font-serif: "Playfair Display", serif;
-  --font-sans: "Plus Jakarta Sans", "Inter", sans-serif;
+  --font-sans: "Inter", "Plus Jakarta Sans", sans-serif;
   --font-vibes: "Great Vibes", cursive;
 
   --color-brand-primary: #e11d48;
@@ -68,6 +68,10 @@
   .premium-shadow {
     box-shadow: 0 25px 50px -12px rgba(225, 29, 72, 0.12);
   }
+
+  .urgency-banner {
+    @apply bg-linear-to-r from-rose-600 to-purple-700 text-white py-3 px-4 text-center font-bold text-sm tracking-wide;
+  }
 }
 
 /* ── Custom Button Component ── */
@@ -94,7 +98,7 @@
 }
 
 .btn-gradient {
-  background: linear-gradient(135deg, #e11d48, #f43f5e);
+  background: linear-gradient(135deg, #e11d48, #7e22ce);
   color: white;
   box-shadow: 0 10px 30px -5px rgba(225, 29, 72, 0.3);
 }
@@ -118,6 +122,33 @@
 }
 
 /* ── Smooth Animations ── */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); opacity: 0.95; }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 30s linear infinite;
+}
+
+.animate-pulse-slow {
+  animation: heartbeat 3s ease-in-out infinite;
+}
+
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-15px); }

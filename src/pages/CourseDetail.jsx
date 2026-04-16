@@ -16,7 +16,7 @@ const courses = {
     rating: 4.9,
     price: 'Admission Open',
     category: 'Embroidery',
-    bgGradient: 'from-rose-500 to-rose-600',
+    bgGradient: 'from-rose-600 to-purple-700',
     syllabus: [
       { title: 'Fundamentals', items: ['Needle handling', 'Chain stitch basics', 'Zig zag & fill'] },
       { title: 'Professional', items: ['Zardosi techniques', 'Sequins & Stone work', 'Cut work'] },
@@ -34,7 +34,7 @@ const courses = {
     rating: 4.8,
     price: 'Admission Open',
     category: 'Fashion',
-    bgGradient: 'from-purple-500 to-purple-600',
+    bgGradient: 'from-purple-600 to-violet-800',
     syllabus: [
       { title: 'Basics', items: ['Machine handling', 'Basic seams', 'Hand finishing'] },
       { title: 'Blouse Specialist', items: ['Normal & cross-cut', 'Katori & Princess cut'] },
@@ -90,7 +90,7 @@ export default function CourseDetail() {
   return (
     <PageWrapper>
       {/* ── Hero ────────────────────────────────────────── */}
-      <section className={`pt-32 pb-16 lg:pt-48 lg:pb-32 px-5 sm:px-8 bg-linear-to-br ${course.bgGradient} text-white`}>
+      <section className={`pt-48 pb-16 lg:pt-64 lg:pb-32 px-5 sm:px-8 bg-linear-to-br ${course.bgGradient} text-white`}>
          <div className="container-custom">
             <Link to="/courses" className="inline-flex items-center gap-2 text-white/70 hover:text-white mb-10 transition-colors font-bold text-sm uppercase tracking-widest">
                <ArrowLeft size={18} /> All Courses
@@ -216,9 +216,13 @@ export default function CourseDetail() {
             <div className="bg-slate-900 p-10 sm:p-20 rounded-[4rem] text-center relative overflow-hidden">
                <div className="absolute inset-0 opacity-20 bg-linear-to-br from-rose-500 to-amber-500 translate-y-1/2 blur-[100px]" />
                <div className="relative z-10">
-                  <h2 className="font-serif text-3xl sm:text-6xl font-bold text-white mb-10">Transform From <span className="italic text-rose-400">Hobbyist</span> <br /> to <span className="text-amber-400">Professional</span></h2>
+                  <div className="mb-6">
+                    <span className="text-rose-400 font-extrabold uppercase tracking-widest text-xs">Summer Special Live</span>
+                  </div>
+                  <h2 className="font-serif text-3xl sm:text-6xl font-bold text-white mb-8">Transform From <span className="italic text-rose-400">Hobbyist</span> <br /> to <span className="text-violet-400">Professional</span></h2>
+                  <p className="text-slate-400 mb-10 max-w-2xl mx-auto font-medium">Join now and get <span className="text-white font-bold">30 Days FREE</span> advanced training. Limited seats for June batch!</p>
                   <a href="https://wa.me/918072769642" className="btn-premium btn-gradient w-full sm:w-auto px-16 text-center">
-                    Secure Your Seat Now <ArrowRight size={22} />
+                    Enroll with Free Offer <ArrowRight size={22} />
                   </a>
                </div>
             </div>

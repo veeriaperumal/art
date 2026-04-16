@@ -48,20 +48,68 @@ const coursesData = [
     badge: '★ Expert Rated'
   },
   {
+    id: 'beautician',
+    category: 'Beauty',
+    emoji: '💄',
+    title: 'Professional Beautician',
+    subtitle: 'Full Salon Mastery',
+    duration: '3 Months',
+    students: '90+',
+    rating: 4.9,
+    description: 'A comprehensive diploma covering skin care, hair styling, facials, and complete salon management techniques.',
+    badge: '★ Career Focus'
+  },
+  {
+    id: 'mehandi',
+    category: 'Beauty',
+    emoji: '🌿',
+    title: 'Mehandi Artistry',
+    subtitle: 'Traditional & Arabic Art',
+    duration: '1 Month',
+    students: '110+',
+    rating: 4.8,
+    description: 'Master the art of Mehandi designing, from basic patterns to complex bridal henna and mythological designs.',
+    badge: '★ Artistic'
+  },
+  {
+    id: 'saree-art',
+    category: 'Saree Art',
+    emoji: '👘',
+    title: 'Saree Pre-pleating & Draping',
+    subtitle: 'Professional Stylist',
+    duration: '15 Days',
+    students: '75+',
+    rating: 5.0,
+    description: 'Learn the high-demand skills of saree pre-pleating, box folding, and professional draping for events and weddings.',
+    badge: '★ Hot Choice'
+  },
+  {
+    id: 'tassels',
+    category: 'Saree Art',
+    emoji: '🧵',
+    title: 'Saree Tassels & Kuchu',
+    subtitle: 'Artisan Bead Work',
+    duration: '15 Days',
+    students: '60+',
+    rating: 4.7,
+    description: 'Exquisite saree tassel designs, crochet kuchu, and designer bead work to enhance the beauty of any saree.',
+    badge: '★ Creative'
+  },
+  {
     id: 'crafts',
     category: 'Crafts',
     emoji: '🧶',
-    title: 'Creative Crafts',
-    subtitle: 'Artisan Handicrafts',
+    title: 'Brooches & 3D Art',
+    subtitle: 'Handmade Jewelry',
     duration: '1 Month',
     students: '180+',
     rating: 4.7,
-    description: 'Learn beautiful silk thread crafts, varusa plates, and unique handmade decorative items in our Chidambaram studio.',
-    badge: '★ Creative'
+    description: 'Learn to create stunning 3D brooches, silk thread jewelry, and handmade decorative items for festive occasions.',
+    badge: '★ Mini Course'
   }
 ]
 
-const categories = ['All', 'Embroidery', 'Fashion', 'Beauty', 'Crafts']
+const categories = ['All', 'Embroidery', 'Fashion', 'Beauty', 'Saree Art', 'Crafts']
 
 export default function Courses() {
   const [activeCategory, setActiveCategory] = useState('All')
@@ -92,14 +140,14 @@ export default function Courses() {
   return (
     <PageWrapper>
       <SEO 
-        title="Professional Aari & Tailoring Courses in Chidambaram" 
-        description="Browse our master catalog of fashion arts. From Aari embroidery to bridal makeup, get certified by Chidambaram's top-rated academy."
+        title="Professional Fashion Courses | Aari, Tailoring & Makeup in Chidambaram" 
+        description="Browse our master catalog of fashion arts. From Aari embroidery to bridal makeup, get certified by Chidambaram's top-rated academy with 100% placement support."
         url="/courses"
         schema={coursesSchema}
       />
 
       {/* ── Title Banner ─────────────────────────────────── */}
-      <section className="pt-32 pb-16 md:pt-48 md:pb-32 px-5 sm:px-8 bg-slate-50 relative overflow-hidden">
+      <section className="pt-48 pb-16 md:pt-64 md:pb-32 px-5 sm:px-8 bg-slate-50 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-rose-100/40 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4" />
         <div className="container-custom relative z-10 text-center lg:text-left">
           <div className="max-w-3xl">
@@ -198,19 +246,22 @@ export default function Courses() {
       {/* ── Help CTA ──────────────────────────────────────── */}
       <section className="py-24 px-5 sm:px-8 bg-slate-50">
         <div className="container-custom">
-           <div className="glass-card rounded-[3rem] p-10 md:p-20 text-center border-white shadow- premium">
-              <ShieldCheck className="mx-auto text-rose-500 mb-8" size={56} />
-              <h2 className="font-serif text-3xl sm:text-6xl font-bold text-slate-900 mb-8 leading-tight">Need Career Advice?</h2>
-              <p className="text-slate-500 font-medium text-lg leading-relaxed max-w-xl mx-auto mb-12">
-                Our expert mentors in Chidambaram will help you choose the right creative path to build your future boutique.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                 <Link to="/contact" className="btn-premium btn-gradient w-full sm:w-auto px-12 text-center">
-                   Start Free Consultation <ArrowRight size={18} />
-                 </Link>
-                 <a href="tel:+918072769642" className="btn-premium btn-outline w-full sm:w-auto px-12 text-center">
-                   Call for Admission <Phone size={18} className="ml-2" />
-                 </a>
+           <div className="glass-card rounded-[4rem] p-10 md:p-20 text-center border-white shadow-premium relative overflow-hidden group">
+              <div className="absolute inset-0 bg-linear-to-tr from-rose-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="relative z-10">
+                <ShieldCheck className="mx-auto text-rose-500 mb-8" size={56} />
+                <h2 className="font-serif text-3xl sm:text-6xl font-bold text-slate-900 mb-8 leading-tight">Need Career Advice?</h2>
+                <p className="text-slate-500 font-medium text-lg leading-relaxed max-w-xl mx-auto mb-12">
+                  Not sure which course is right for you? Talk to our master trainers in Chidambaram for a <span className="text-rose-600 font-bold underline decoration-rose-200 underline-offset-8">Free 1-on-1 Consultation.</span>
+                </p>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                   <Link to="/contact" className="btn-premium btn-gradient w-full sm:w-auto px-12 text-center">
+                     Start Free Consultation <ArrowRight size={18} />
+                   </Link>
+                   <a href="tel:+918072769642" className="btn-premium btn-outline w-full sm:w-auto px-12 text-center">
+                     Call for Admission <Phone size={18} className="ml-2" />
+                   </a>
+                </div>
               </div>
            </div>
         </div>

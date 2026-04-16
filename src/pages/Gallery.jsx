@@ -44,7 +44,7 @@ export default function Gallery() {
         url="/gallery"
       />
 
-      <section className="pt-32 pb-16 lg:pt-48 lg:pb-32 px-5 sm:px-8 bg-slate-50 relative overflow-hidden">
+      <section className="pt-48 pb-16 lg:pt-64 lg:pb-32 px-5 sm:px-8 bg-slate-50 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-rose-100/40 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4" />
         <div className="container-custom relative z-10 text-center lg:text-left">
           <motion.span 
