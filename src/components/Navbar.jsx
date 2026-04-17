@@ -42,7 +42,7 @@ export default function Navbar() {
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
       >
         {/* ── Urgency Ribbon (Black - Top) ── */}
-        <div className="bg-slate-900 text-white py-1.5 overflow-hidden whitespace-nowrap border-b border-white/5">
+        <div className="hidden sm:block bg-slate-900 text-white py-1.5 overflow-hidden whitespace-nowrap border-b border-white/5">
           <div className="flex animate-marquee-reverse gap-12 items-center">
             {[1,2,3,4,5,6].map(i => (
               <span key={i} className="text-[10px] font-extrabold uppercase tracking-[.2em] flex items-center gap-2">
@@ -53,10 +53,10 @@ export default function Navbar() {
         </div>
 
         {/* ── Summer Special Urgency Banner (Rose-Violet) ────── */}
-        <div className="bg-linear-to-r from-rose-600 to-purple-700 text-white py-1.5 overflow-hidden whitespace-nowrap border-b border-white/10">
+        <div className="bg-linear-to-r from-rose-600 to-purple-700 text-white py-1 md:py-1.5 overflow-hidden whitespace-nowrap border-b border-white/10">
           <div className="flex animate-marquee gap-8 items-center">
             {[1,2,3,4,5,6].map(i => (
-              <span key={i} className="text-[10px] md:text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+              <span key={i} className="text-[9px] md:text-xs font-bold uppercase tracking-widest flex items-center gap-2">
                 🌞 Summer Special: Join any Professional Course and get 30 Days FREE! <Sparkles size={12} className="text-yellow-300" /> 
               </span>
             ))}
@@ -64,19 +64,19 @@ export default function Navbar() {
         </div>
 
         {/* ── Main Navigation ── */}
-        <div className={`transition-all duration-500 px-4 sm:px-8 ${scrolled ? 'pt-2' : 'pt-4'}`}>
-          <div className={`mx-auto max-w-7xl px-6 rounded-[2.5rem] transition-all duration-500 glass-effect shadow-premium ${scrolled ? 'py-2' : 'py-3'
+        <div className={`transition-all duration-500 px-3 sm:px-8 ${scrolled ? 'pt-1.5' : 'pt-2 md:pt-4'}`}>
+          <div className={`mx-auto max-w-7xl px-4 md:px-6 rounded-[1.5rem] md:rounded-[2.5rem] transition-all duration-500 glass-effect shadow-premium ${scrolled ? 'py-1.5' : 'py-2 md:py-3'
             }`}>
-          <div className="flex items-center justify-between h-14 md:h-16">
+          <div className="flex items-center justify-between h-12 md:h-16">
 
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 shrink-0 group">
-              <div className="w-10 h-10 md:w-14 md:h-14 rounded-2xl bg-white flex items-center justify-center p-1 shadow-sm group-hover:rotate-3 transition-transform duration-300">
+            <Link to="/" className="flex items-center gap-2 md:gap-3 shrink-0 group">
+              <div className="w-9 h-9 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-white flex items-center justify-center p-1 shadow-sm group-hover:rotate-3 transition-transform duration-300">
                 <img src="/logo.png" alt="Glorious Art Academy" className="w-full h-full object-contain" />
               </div>
-              <div className="hidden sm:block">
-                <p className="font-serif text-lg md:text-xl font-extrabold leading-none text-slate-900 group-hover:text-rose-600 transition-colors">Glorious Art</p>
-                <p className="text-[10px] text-rose-500 tracking-[0.2em] font-extrabold uppercase mt-1">Academy</p>
+              <div className="hidden xs:block sm:block">
+                <p className="font-serif text-sm md:text-xl font-extrabold leading-none text-slate-900 group-hover:text-rose-600 transition-colors">Glorious Art</p>
+                <p className="text-[8px] md:text-[10px] text-rose-500 tracking-[0.2em] font-extrabold uppercase mt-0.5 md:mt-1">Academy</p>
               </div>
             </Link>
 
@@ -149,7 +149,7 @@ export default function Navbar() {
                 <div className="flex items-center justify-between">
                   <Link to="/" className="flex items-center gap-3">
                     <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center p-1 shadow-sm">
-                      <img src="/glorious_art_logo_1776359795125.png" alt="Logo" className="w-full h-full object-contain" />
+                      <img src="/logo.png" alt="Logo" className="w-full h-full object-contain" />
                     </div>
                     <p className="font-serif text-xl font-extrabold text-slate-900">Glorious Art</p>
                   </Link>

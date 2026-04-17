@@ -37,9 +37,9 @@ function AnimatedRoutes() {
 function App() {
   const [loading, setLoading] = useState(true)
 
+  // Immediate render for better LCP
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2200)
-    return () => clearTimeout(timer)
+    setLoading(false)
   }, [])
 
   if (loading) return <Loader />

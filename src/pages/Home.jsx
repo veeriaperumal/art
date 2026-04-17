@@ -111,7 +111,7 @@ export default function Home() {
       />
 
       {/* ── Hero Section ──────────────────────────────────── */}
-      <section className="relative min-h-[90vh] lg:min-h-[100vh] flex items-center pt-32 sm:pt-40 lg:pt-48 pb-20 lg:pb-32 overflow-hidden bg-white">
+      <section className="relative min-h-[85vh] lg:min-h-[100vh] flex items-center pt-28 sm:pt-40 lg:pt-48 pb-20 lg:pb-32 overflow-hidden bg-white">
         <div className="absolute top-0 right-[-10%] w-[80vw] lg:w-[60vw] h-[80vw] lg:h-[60vw] bg-rose-50 rounded-full blur-[120px] opacity-60" />
         <div className="absolute bottom-[-20%] left-[-10%] w-[60vw] lg:w-[50vw] h-[60vw] lg:h-[50vw] bg-purple-50 rounded-full blur-[100px] opacity-40" />
         
@@ -174,8 +174,14 @@ export default function Home() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="relative w-full max-w-[580px]"
               >
-                <div className="relative rounded-[4rem] overflow-hidden shadow-2xl animate-float group">
-                  <img src={heroImg} alt="Master Aari Embroidery in Chidambaram" className="w-full h-auto object-cover aspect-[4/5] transform group-hover:scale-105 transition-transform duration-1000" />
+                <div className="relative rounded-[3rem] md:rounded-[4rem] overflow-hidden shadow-2xl animate-float group">
+                  <img 
+                    src={heroImg} 
+                    alt="Master Aari Embroidery in Chidambaram" 
+                    className="w-full h-auto object-cover aspect-[4/5] transform group-hover:scale-105 transition-transform duration-1000" 
+                    fetchpriority="high"
+                    loading="eager"
+                  />
                 </div>
               </motion.div>
             </div>
@@ -255,7 +261,7 @@ export default function Home() {
                <motion.div 
                  initial={{ opacity: 0, scale: 0.9 }}
                  whileInView={{ opacity: 1, scale: 1 }}
-                 className="aspect-square rounded-[4rem] bg-white flex flex-col items-center justify-center p-8 lg:p-16 text-center border-4 border-rose-500 shadow-[0_0_50px_rgba(225,29,72,0.3)] relative group overflow-hidden"
+                 className="aspect-auto md:aspect-square rounded-[3rem] md:rounded-[4rem] bg-white flex flex-col items-center justify-center p-8 lg:p-16 text-center border-4 border-rose-500 shadow-[0_0_50px_rgba(225,29,72,0.3)] relative group overflow-hidden"
                >
                   <div className="absolute inset-0 bg-linear-to-br from-rose-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                   <div className="relative z-10 space-y-8">
