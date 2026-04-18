@@ -1,10 +1,10 @@
 import { Helmet } from 'react-helmet-async'
 
 export default function SEO({ title, description, keywords, image, url, schema }) {
-  const siteTitle = 'Glorious Art Academy'
+  const siteTitle = 'Glorious Art Creations'
   const fullTitle = `${title} | ${siteTitle}`
-  const siteUrl = 'https://gloriousartacademy.com' // Replace with actual domain
-  const finalDescription = description || 'Chidambaram\'s #1 Aari Embroidery and Fashion Designing Academy for Women.'
+  const siteUrl = 'https://gloriousartcreations.com'
+  const finalDescription = description || 'Chidambaram\'s #1 Aari Embroidery and Fashion Designing Academy (Affiliated to ICVE/CDL/CHM-281).'
 
   return (
     <Helmet>

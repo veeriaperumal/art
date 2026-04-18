@@ -72,11 +72,11 @@ export default function Navbar() {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2 md:gap-3 shrink-0 group">
               <div className="w-9 h-9 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-white flex items-center justify-center p-1 shadow-sm group-hover:rotate-3 transition-transform duration-300">
-                <img src="/logo.png" alt="Glorious Art Academy" className="w-full h-full object-contain" />
+                <img src="/logo.png" alt="Glorious Art Creations" className="w-full h-full object-contain" />
               </div>
               <div className="hidden xs:block sm:block">
                 <p className="font-serif text-sm md:text-xl font-extrabold leading-none text-slate-900 group-hover:text-rose-600 transition-colors">Glorious Art</p>
-                <p className="text-[8px] md:text-[10px] text-rose-500 tracking-[0.2em] font-extrabold uppercase mt-0.5 md:mt-1">Academy</p>
+                <p className="text-[8px] md:text-[10px] text-rose-500 tracking-[0.2em] font-extrabold uppercase mt-0.5 md:mt-1">Creations</p>
               </div>
             </Link>
 
@@ -149,7 +149,7 @@ export default function Navbar() {
                 <div className="flex items-center justify-between">
                   <Link to="/" className="flex items-center gap-3">
                     <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center p-1 shadow-sm">
-                      <img src="/logo.png" alt="Logo" className="w-full h-full object-contain" />
+                      <img src="/logo.png" alt="Glorious Art Creations" className="w-full h-full object-contain" />
                     </div>
                     <p className="font-serif text-xl font-extrabold text-slate-900">Glorious Art</p>
                   </Link>
@@ -192,7 +192,7 @@ export default function Navbar() {
                     Start Your Journey <Sparkles size={18} />
                   </Link>
                   <div className="text-center">
-                    <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">© Chidambaram Academy</p>
+                    <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">© Chidambaram | Bhuvanagiri</p>
                   </div>
                 </div>
               </div>

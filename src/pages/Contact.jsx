@@ -11,8 +11,8 @@ export default function Contact() {
   return (
     <PageWrapper>
       <SEO 
-        title="Contact Admissions | Enroll at Glorious Art Academy" 
-        description="Ready to start your creative career? Contact Glorious Art Academy in Chidambaram for admission details, course fees, and schedule information."
+        title="Contact Admissions | Enroll at Glorious Art Creations" 
+        description="Ready to start your creative career? Contact Glorious Art Creations in Chidambaram for admission details, course fees, and schedule information."
         url="/contact"
       />
       
@@ -53,12 +53,12 @@ export default function Contact() {
                  </div>
 
                  <div className="space-y-8">
-                    {[
-                       { icon: <MapPin />, title: 'Our Campus', text: '8A/2, Umayal Street, (Near National Shopping), Chidambaram, Tamil Nadu, 608001' },
-                       { icon: <Phone />, title: 'Direct Line', text: '+91 80727 69642, 73395 33550' },
-                       { icon: <Mail />, title: 'Email Support', text: 'gloriousart.creations@gmail.com' },
-                       { icon: <Clock />, title: 'Batch Timings', text: 'Daily & Weekend Batches Available' }
-                    ].map((item, i) => (
+                     {[
+                        { icon: <MapPin />, title: 'Main Campus', text: '8A/2, Umayal Street, (Near National Shopping), Chidambaram, Tamil Nadu' },
+                        { icon: <MapPin />, title: 'Bhuvanagiri Branch', text: 'Main Road, Bhuvanagiri, Tamil Nadu' },
+                        { icon: <Phone />, title: 'Direct Line', text: '+91 80727 69642, 73395 33550' },
+                        { icon: <Mail />, title: 'Email Support', text: 'gacgloriousartcreationsstrust07@gmail.com' },
+                     ].map((item, i) => (
                        <motion.div 
                          key={i}
                          initial={{ opacity: 0, x: -20 }}

@@ -25,8 +25,8 @@ export default function About() {
   const aboutSchema = {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
-    "name": "Glorious Art Academy",
-    "description": "Premium fashion and beauty academy in Chidambaram specializing in Aari embroidery and tailored fashion.",
+    "name": "Glorious Art Creations",
+    "description": "Premium fashion and beauty training in Chidambaram specializing in Aari embroidery and tailored fashion.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Chidambaram",
@@ -37,8 +37,8 @@ export default function About() {
   return (
     <PageWrapper>
       <SEO 
-        title="Meet the Masters | Glorious Art Academy Success Story" 
-        description="Learn the history and mission of Glorious Art Academy. Discover how we empower women in Chidambaram through expert fashion and beauty training."
+        title="Meet the Masters | Glorious Art Creations Success Story" 
+        description="Learn the history and mission of Glorious Art Creations. Discover how we empower women through expert fashion and beauty training."
         url="/about"
         schema={aboutSchema}
       />
@@ -49,24 +49,24 @@ export default function About() {
         <div className="container-custom relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
              <div>
-                <SectionTitle 
-                  subtitle="Our Mission in Chidambaram"
-                  title="Empowering Women Through Skilled Artistry"
-                  description="Glorious Art Creations was founded with a single vision: to transform hidden creative talents into independent professional careers for the women of our temple city."
-                />
-                <div className="space-y-6 mb-10">
-                   <p className="text-slate-600 font-medium leading-relaxed italic">
-                     "We don't just teach stitches; we build confidence and create entrepreneurs."
-                   </p>
-                </div>
-                <div className="flex flex-col sm:flex-row gap-6">
-                   <Link to="/contact" className="btn-premium btn-gradient w-full sm:w-auto px-12 text-center">
-                     Join Our Academy <ArrowRight size={20} />
-                   </Link>
-                   <Link to="/courses" className="btn-premium btn-outline w-full sm:w-auto px-12 text-center">
-                     Explore Courses <ArrowRight size={20} />
-                   </Link>
-                </div>
+                 <SectionTitle 
+                   subtitle="Our Mission for Chidambaram"
+                   title="Empowering Women Through Skilled Artistry"
+                   description="OUR MISSION of worldwide: To transform hidden creative talents into independent professional careers for women."
+                 />
+                 <div className="space-y-6 mb-10">
+                    <p className="text-slate-600 font-medium leading-relaxed italic">
+                      "Work until an signature becomes an Autograph."
+                    </p>
+                 </div>
+                 <div className="flex flex-col sm:flex-row gap-6">
+                    <Link to="/contact" className="btn-premium btn-gradient w-full sm:w-auto px-12 text-center">
+                      Join Our Academy <ArrowRight size={20} />
+                    </Link>
+                    <Link to="/courses" className="btn-premium btn-outline w-full sm:w-auto px-12 text-center">
+                      Explore Catalog <ArrowRight size={20} />
+                    </Link>
+                 </div>
              </div>
              <motion.div 
                initial={{ opacity: 0, scale: 0.9 }}
@@ -94,7 +94,7 @@ export default function About() {
                  </div>
                  <div className="absolute -bottom-10 -right-10 glass-effect p-8 rounded-[3rem] shadow-premium max-w-xs">
                     <p className="font-vibes text-3xl text-rose-600 mb-2">Master Trainer</p>
-                    <p className="text-slate-900 font-bold leading-tight">10+ Years of Professional Boutique Experience</p>
+                    <p className="text-slate-900 font-bold leading-tight">8 Years of Professional Boutique Experience</p>
                  </div>
               </div>
               <div className="space-y-8">
@@ -116,34 +116,38 @@ export default function About() {
       </section>
 
       {/* ── Values ────────────────────────────────────────── */}
-      <section className="section-padding px-5 sm:px-8 bg-slate-50">
-        <div className="container-custom">
-          <SectionTitle subtitle="Core Academy Values" title="The Pillars of Our Success" center />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-             {[
-               { icon: <Heart />, title: 'Women-Centric', desc: 'Focusing exclusively on skills that build financial independence for women in Chidambaram.' },
-               { icon: <Star />, title: 'Quality First', desc: 'Masters-level training from basic needlework to advanced bridal blouse designs.' },
-               { icon: <ShieldCheck />, title: 'Govt Certified', desc: 'Official recognition for every professional course you successfully complete.' },
-               { icon: <Users />, title: 'Alumni Network', desc: 'A supportive community of 500+ successful graduates and business owners.' }
-             ].map((v, i) => (
+              {[
+                { icon: <Heart />, title: 'Women-Centric', desc: 'Focusing exclusively on skills that build financial independence for women.' },
+                { 
+                  icon: <Star />, 
+                  title: 'World Record', 
+                  desc: 'No 1 world won ACADEMY on DEC 6. 2025 for 4 Categories.',
+                  highlight: true 
+                },
+                { icon: <ShieldCheck />, title: 'Govt Certified', desc: 'Official recognition with ISO 9001:2015 for every professional course.' },
+                { icon: <Users />, title: 'Alumni Network', desc: 'A supportive community of 500+ successful graduates and business owners.' }
+              ].map((v, i) => (
                 <motion.div 
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="p-8 rounded-[2rem] bg-white border border-slate-100 hover:shadow-xl transition-all"
+                  transition={{ delay: i * 0.1, duration: 0.8 }}
+                  className={`p-10 rounded-[2.5rem] border transition-all duration-500 hover:shadow-2xl ${
+                    v.highlight 
+                    ? 'bg-slate-900 text-white border-slate-800 shadow-xl' 
+                    : 'bg-white border-slate-100'
+                  }`}
                 >
-                   <div className="w-12 h-12 rounded-2xl bg-rose-600/10 text-rose-600 flex items-center justify-center mb-6">
+                   <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 ${
+                     v.highlight ? 'bg-rose-500 text-white' : 'bg-rose-600/10 text-rose-600'
+                   }`}>
                       {v.icon}
                    </div>
-                   <h3 className="font-serif text-xl font-bold text-slate-900 mb-3">{v.title}</h3>
-                   <p className="text-slate-500 text-sm font-medium leading-relaxed">{v.desc}</p>
+                   <h3 className={`font-serif text-2xl font-bold mb-4 ${v.highlight ? 'text-white' : 'text-slate-900'}`}>{v.title}</h3>
+                   <p className={`text-sm font-medium leading-relaxed ${v.highlight ? 'text-slate-400' : 'text-slate-500'}`}>{v.desc}</p>
                 </motion.div>
-             ))}
-          </div>
-        </div>
-      </section>
+              ))}
 
       {/* ── Final Call ────────────────────────────────────── */}
       <section className="py-24 px-5 sm:px-8">

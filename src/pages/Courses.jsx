@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Clock, Users, ArrowRight, ShieldCheck, Phone, Plus } from 'lucide-react'
+import { Clock, Users, ArrowRight, ShieldCheck, Phone, Plus, Sparkles } from 'lucide-react'
 import PageWrapper from '../components/PageWrapper'
 import SEO from '../components/SEO'
 
@@ -16,23 +16,23 @@ const coursesData = [
     category: 'Embroidery',
     img: aariImg,
     title: 'Aari Embroidery',
-    subtitle: 'Professional Bridal Art',
-    duration: '3 Months',
+    subtitle: 'Proficient enchanting with threads',
+    duration: '35 Days, 3 Mos, 6 Mos',
     students: '150+',
     rating: 4.9,
-    description: 'Master the traditional art of Aari embroidery in Chidambaram — from basic needles to complex bridal blouse designing.',
+    description: 'Master the traditional art of Aari embroidery — from basic needles to complex bridal designs.',
     badge: '★ Best Seller'
   },
   {
     id: 'tailoring',
     category: 'Fashion',
     img: tailoringImg,
-    title: 'Fashion Designing',
-    subtitle: 'Boutique Specialist',
-    duration: '4 Months',
+    title: 'Fashion Designing (FD)',
+    subtitle: 'Legacy elegance in every thread',
+    duration: '6 Months, 10 Months',
     students: '120+',
     rating: 4.8,
-    description: 'Learn garment construction, pattern making, and boutique-style stitching from scratch with expert tailoring classes.',
+    description: 'Professional sewing with passion. Learn garment construction, pattern making, and boutique styling.',
     badge: '★ Professional'
   },
   {
@@ -40,11 +40,11 @@ const coursesData = [
     category: 'Beauty',
     img: makeupImg,
     title: 'Makeup Artistry',
-    subtitle: 'Bridal & Grooming',
+    subtitle: 'Unveil your natural glow',
     duration: '2 Months',
     students: '200+',
     rating: 5.0,
-    description: 'Professional makeup artistry in Chidambaram covering everyday glam to heavy bridal looks and hair styling.',
+    description: 'Professional makeup artistry covering everyday glam to heavy bridal looks.',
     badge: '★ Expert Rated'
   },
   {
@@ -52,23 +52,23 @@ const coursesData = [
     category: 'Beauty',
     emoji: '💄',
     title: 'Professional Beautician',
-    subtitle: 'Full Salon Mastery',
+    subtitle: 'Wake up & makeup',
     duration: '3 Months',
     students: '90+',
     rating: 4.9,
-    description: 'A comprehensive diploma covering skin care, hair styling, facials, and complete salon management techniques.',
-    badge: '★ Career Focus'
+    description: 'Full Salon Mastery covering skin care, hair styling, and salon management.',
+    badge: 'Career Focus'
   },
   {
     id: 'mehandi',
     category: 'Beauty',
     emoji: '🌿',
     title: 'Mehandi Artistry',
-    subtitle: 'Traditional & Arabic Art',
-    duration: '1 Month',
+    subtitle: 'Mehandi licious',
+    duration: '35 Days, 3 Mos, 6 Mos',
     students: '110+',
     rating: 4.8,
-    description: 'Master the art of Mehandi designing, from basic patterns to complex bridal henna and mythological designs.',
+    description: 'Master henna mixology and intricate patterns from basic to bridal mastery.',
     badge: '★ Artistic'
   },
   {
@@ -76,35 +76,35 @@ const coursesData = [
     category: 'Saree Art',
     emoji: '👘',
     title: 'Saree Pre-pleating & Draping',
-    subtitle: 'Professional Stylist',
+    subtitle: 'Elegance in minutes',
     duration: '15 Days',
     students: '75+',
     rating: 5.0,
-    description: 'Learn the high-demand skills of saree pre-pleating, box folding, and professional draping for events and weddings.',
-    badge: '★ Hot Choice'
+    description: 'Six yards of pure grace. Professional draping and pre-pleating for events.',
+    badge: 'Hot Choice'
   },
   {
     id: 'tassels',
     category: 'Saree Art',
     emoji: '🧵',
     title: 'Saree Tassels & Kuchu',
-    subtitle: 'Artisan Bead Work',
+    subtitle: 'pallu perfection',
     duration: '15 Days',
     students: '60+',
     rating: 4.7,
-    description: 'Exquisite saree tassel designs, crochet kuchu, and designer bead work to enhance the beauty of any saree.',
+    description: 'Exquisite bead work and designer tassels to enhance any saree.',
     badge: '★ Creative'
   },
   {
     id: 'crafts',
     category: 'Crafts',
     emoji: '🧶',
-    title: 'Brooches & 3D Art',
-    subtitle: 'Handmade Jewelry',
-    duration: '1 Month',
+    title: 'Brooches & Fabric Painting',
+    subtitle: 'Expression of artistry',
+    duration: '35 Days, 3 Mos, 6 Mos',
     students: '180+',
     rating: 4.7,
-    description: 'Learn to create stunning 3D brooches, silk thread jewelry, and handmade decorative items for festive occasions.',
+    description: 'Every stroke tells a story. 3D brooches and fine fabric painting techniques.',
     badge: '★ Mini Course'
   }
 ]
@@ -130,8 +130,8 @@ export default function Courses() {
         "description": c.description,
         "provider": {
           "@type": "Organization",
-          "name": "Glorious Art Academy",
-          "sameAs": "https://gloriousartacademy.com"
+          "name": "Glorious Art Creations",
+          "sameAs": "https://gloriousartcreations.com"
         }
       }
     }))
@@ -141,7 +141,7 @@ export default function Courses() {
     <PageWrapper>
       <SEO 
         title="Professional Fashion Courses | Aari, Tailoring & Makeup in Chidambaram" 
-        description="Browse our master catalog of fashion arts. From Aari embroidery to bridal makeup, get certified by Chidambaram's top-rated academy with 100% placement support."
+        description="Browse our master catalog of fashion arts. From Aari embroidery to bridal makeup, get certified by Glorious Art Creations — #1 in Chidambaram."
         url="/courses"
         schema={coursesSchema}
       />
@@ -169,17 +169,19 @@ export default function Courses() {
             {/* Horizontal Filter - Scrollable on mobile */}
             <div className="flex items-center gap-2 overflow-x-auto pb-4 no-scrollbar -mx-5 px-5 lg:mx-0 lg:px-0">
                {categories.map(cat => (
-                 <button
+                 <motion.button
                    key={cat}
+                   whileHover={{ scale: 1.05 }}
+                   whileTap={{ scale: 0.95 }}
                    onClick={() => setActiveCategory(cat)}
-                   className={`whitespace-nowrap px-8 py-3 rounded-2xl text-[10px] font-extrabold uppercase tracking-widest transition-all ${
+                   className={`whitespace-nowrap px-8 py-3 rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] transition-all ${
                      activeCategory === cat 
-                     ? 'bg-slate-900 text-white shadow-xl' 
+                     ? 'bg-slate-900 text-white shadow-xl shadow-slate-200' 
                      : 'bg-white text-slate-500 hover:bg-rose-50 border border-slate-100'
                    }`}
                  >
                    {cat}
-                 </button>
+                 </motion.button>
                ))}
             </div>
           </div>
@@ -203,20 +205,43 @@ export default function Courses() {
                     {/* Visual Side */}
                     <div className="w-full sm:w-[45%] relative aspect-square sm:aspect-auto min-h-[250px] overflow-hidden bg-slate-100">
                        {c.img ? (
-                         <img src={c.img} alt={`Professional ${c.title} course at Glorious Art Academy Chidambaram`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 absolute inset-0" loading="lazy" decoding="async" />
+                         <img src={c.img} alt={`Professional ${c.title} course at Glorious Art Creations Chidambaram`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 absolute inset-0" loading="lazy" decoding="async" />
                        ) : (
                          <div className="w-full h-full flex items-center justify-center text-7xl bg-white">{c.emoji}</div>
                        )}
-                       <div className="absolute top-6 left-6 px-4 py-2 bg-white/90 backdrop-blur-md rounded-2xl text-[10px] font-extrabold uppercase tracking-widest text-slate-900">
-                          {c.badge}
-                       </div>
+                        <div className="absolute top-6 left-6 z-20">
+                           {c.badge === 'Career Focus' ? (
+                             <motion.div 
+                               initial={{ scale: 0.8, opacity: 0 }}
+                               whileInView={{ scale: 1, opacity: 1 }}
+                               transition={{ type: 'spring', damping: 15 }}
+                               className="px-4 py-2 bg-linear-to-r from-purple-600 to-indigo-600 text-white rounded-full text-[9px] font-black uppercase tracking-[0.2em] shadow-lg shadow-purple-200 flex items-center gap-2 border border-white/20"
+                             >
+                               <ShieldCheck size={12} className="text-purple-200" /> Career Focus
+                             </motion.div>
+                           ) : c.badge === 'Hot Choice' ? (
+                             <motion.div 
+                                initial={{ scale: 0.8, opacity: 0 }}
+                                whileInView={{ scale: 1, opacity: 1 }}
+                                transition={{ type: 'spring', damping: 15 }}
+                                className="px-4 py-2 bg-linear-to-r from-orange-500 to-rose-600 text-white rounded-full text-[9px] font-black uppercase tracking-[0.2em] shadow-lg shadow-orange-200 flex items-center gap-2 border border-white/20"
+                             >
+                                <Sparkles size={12} className="text-orange-200" /> Hot Choice
+                             </motion.div>
+                           ) : (
+                             <div className="px-4 py-2 bg-white/90 backdrop-blur-md rounded-2xl text-[9px] font-black uppercase tracking-[0.2em] text-slate-800 shadow-sm border border-slate-100/50">
+                               {c.badge}
+                             </div>
+                           )}
+                        </div>
                     </div>
 
                     {/* Content Side */}
                     <div className="w-full sm:w-[55%] p-8 lg:p-10 flex flex-col justify-between items-start bg-white">
                       <div className="w-full">
                         <span className="text-rose-500 text-[10px] font-bold uppercase tracking-widest mb-2 block">{c.category} Course</span>
-                        <h2 className="font-serif text-2xl lg:text-3xl font-bold text-slate-900 mb-4">{c.title}</h2>
+                        <h2 className="font-serif text-2xl lg:text-3xl font-bold text-slate-900 mb-2">{c.title}</h2>
+                        <p className="text-slate-500 text-xs font-bold italic mb-4">"{c.subtitle}"</p>
                         <p className="text-slate-500 text-sm font-medium leading-relaxed mb-6 line-clamp-2">{c.description}</p>
                         
                         <div className="flex flex-wrap gap-4 mb-8">
@@ -229,12 +254,12 @@ export default function Courses() {
                         </div>
                       </div>
 
-                      <Link 
-                        to={`/course/${c.id}`}
+                      <a 
+                        href="https://wa.me/918072769642"
                         className="btn-premium btn-gradient w-full py-4 text-[10px] uppercase tracking-widest text-center"
                       >
-                        Explore Syllabus <ArrowRight size={16} />
-                      </Link>
+                        Enroll Now <ArrowRight size={16} />
+                      </a>
                     </div>
                  </motion.article>
                ))}

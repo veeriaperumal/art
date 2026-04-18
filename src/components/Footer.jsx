@@ -35,18 +35,16 @@ export default function Footer() {
               </div>
               <div>
                 <p className="font-serif text-xl font-bold text-slate-900 leading-none">Glorious Art</p>
-                <p className="text-[10px] text-rose-500 font-extrabold uppercase tracking-widest mt-1">Academy</p>
+                <p className="text-[10px] text-rose-500 font-extrabold uppercase tracking-widest mt-1">Creations</p>
               </div>
             </Link>
             <p className="text-slate-500 font-medium text-sm leading-relaxed max-w-xs">
-              Chidambaram's official academy affiliated to ICVE. Best in Everything - Empowering women through professional vocational training.
+              Official accreditation affiliated to ICVE. Best in Everything - Beauty & Fashion Designing Academy in Chidambaram.
             </p>
             <div className="flex gap-4">
-              {[1, 2, 3].map(i => (
-                <a key={i} href="#" className="w-10 h-10 rounded-xl bg-white border border-slate-100 flex items-center justify-center text-slate-400 hover:text-rose-600 hover:border-rose-200 transition-all">
-                  <InstagramIcon size={18} />
-                </a>
-              ))}
+              <a href="https://instagram.com/gloriousartcreations_aari" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white border border-slate-100 flex items-center justify-center text-slate-400 hover:text-rose-600 hover:border-rose-200 transition-all">
+                <InstagramIcon size={18} />
+              </a>
             </div>
           </div>
 
@@ -81,22 +79,37 @@ export default function Footer() {
             <h4 className="text-[10px] font-extrabold uppercase tracking-[0.3em] text-slate-400 mb-8">Visit Us</h4>
             <div className="flex gap-4 items-start">
               <MapPin size={20} className="text-rose-500 shrink-0" />
-              <p className="text-slate-600 font-medium text-sm">8A/2, Umayal Street, (Near National Shopping), Chidambaram, Tamil Nadu</p>
+              <div>
+                <p className="text-slate-900 font-bold text-sm">Chidambaram Branch</p>
+                <p className="text-slate-600 font-medium text-xs leading-relaxed">8A/2, Umayal Street, Near National Shopping, Chidambaram</p>
+              </div>
+            </div>
+            <div className="flex gap-4 items-start">
+              <MapPin size={20} className="text-purple-500 shrink-0" />
+              <div>
+                <p className="text-slate-900 font-bold text-sm">Bhuvanagiri Branch</p>
+                <p className="text-slate-600 font-medium text-xs">Main Road, Bhuvanagiri</p>
+              </div>
             </div>
             <div className="flex gap-4 items-start">
               <Phone size={20} className="text-rose-500 shrink-0" />
-              <p className="text-slate-600 font-medium text-sm">+91 80727 69642, 73395 33550</p>
+              <p className="text-slate-600 font-medium text-sm">+91 80727 69642<br />+91 73395 33550</p>
             </div>
             <div className="flex gap-4 items-start">
               <Mail size={20} className="text-rose-500 shrink-0" />
-              <p className="text-slate-600 font-medium text-sm">glorious.art@creations.com</p>
+              <p className="text-slate-600 font-medium text-sm break-all">gacgloriousartcreationsstrust07@gmail.com</p>
             </div>
           </div>
 
         </div>
 
-        <div className="pt-12 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-6">
-          <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">© {currentYear} Glorious Art Creations</p>
+        <div className="pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="space-y-2 text-center md:text-left">
+            <p className="text-slate-400 text-[10px] font-bold uppercase tracking-widest">© {currentYear} Glorious Art Creations</p>
+            <p className="text-rose-500/60 text-[9px] font-bold uppercase tracking-[0.2em] leading-relaxed max-w-md">
+              Privacy Policy: Syllabus only service oriented not for classes without franchise our NAME. SERVICE also available.
+            </p>
+          </div>
           <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">Made with ❤️ for Chidambaram</p>
         </div>
       </div>
